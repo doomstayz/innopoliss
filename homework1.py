@@ -1,7 +1,6 @@
 # Задача 1
 
-name, surname = input(), input()
-print('Привет, ' + name + ' ' + surname, '!')
+print('Привет, ' + input(), input() + '!')
 
 #или
 
@@ -15,6 +14,10 @@ if name_2 == name_1*4:
     print('True')
 else:
     print("False")
+
+#или
+
+print(input() == input()*4)
 
 # Задача 3
 
@@ -35,6 +38,25 @@ elif product== "помидоры":
 else:
     print ("Неизвестный продукт")
 
-#не вспомнил как сделать интеррапт, если вводится что то кроме условных данных ><, давно проходил
+
+#или так
+
+
+while True:
+    product = input().strip().lower()
+    if product in ('яблоки', 'бананы','помидоры'):
+        break
+    print('Неверный продукт! Попробуйте еще раз.')
+
+weight = int(input())*10
+
+calories_per_kg = {
+    'яблоки': 52,
+    'бананы':89,
+    'помидоры':24
+}
+
+total = weight * calories_per_kg[product]
+print(total)
 
 
