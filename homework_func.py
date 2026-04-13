@@ -65,18 +65,23 @@ print('\n'.join(results))
 
 # 5
 
-def cache_decorator(func):
-    cache = {}
+def my_decorator():
+    def real_decorator(func):
+        cache = {}
 
-    def wrapper(k):
-        if k not in cache:
-            cache[k] = func(k)
-        return cache[k]
+        def wrapper(k):
+            if k in cache:
+                return cache[k]
+            result = func(k)
+            cache[k] = result
+            return result
 
-    return wrapper
+        return wrapper
+
+    return real_decorator
 
 
-@cache_decorator
+@my_decorator()
 def fib(k):
     if k == 1:
         return 0
