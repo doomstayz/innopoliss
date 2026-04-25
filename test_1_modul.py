@@ -32,7 +32,6 @@ print(result)
 
 class FunnyList(list):
     def append(self, item):
-        # Вставка элемента в начало списка
         self.insert(0, item)
 
 
